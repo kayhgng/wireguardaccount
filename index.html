@@ -1,5 +1,3 @@
-# Wireguard Account - Warp Account maker -KayHGNG
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +17,14 @@
         button {
             margin-top: 10px;
         }
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+            #data {
+                padding: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -34,12 +40,12 @@
             const data2 = await response2.json();
             
             const localAddress1 = data1.local_address;
-            const privateKey1 = data1.private_key;
+            const privateKey1 = data1.private_key.replace(/\//g, '%');
             const publicKey1 = data1.public_key;
             const reserved1 = data1.reserved;
 
             const localAddress2 = data2.local_address;
-            const privateKey2 = data2.private_key;
+            const privateKey2 = data2.private_key.replace(/\//g, '%');
             const publicKey2 = data2.public_key;
             const reserved2 = data2.reserved;
 
