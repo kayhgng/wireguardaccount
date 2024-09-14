@@ -3,86 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warp On Warp Account Maker</title>
     <title>Wireguard Account - Warp Account maker -KayHGNG</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+ <h1>Wireguard Account - Warp Account maker -KayHGNG</h1>
+            const data1 = await response1.json();
+            const response2 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
+            const data2 = await response2.json();
+            document.getElementById('data').innerText = JSON.stringify([data1, data2], null, 2);
+
+            const localAddress1 = data1.local_address;
+            const privateKey1 = data1.private_key;
+            const publicKey1 = data1.public_key;
+const reserved1 = data1.reserved
+
+            const localAddress2 = data2.local_address;
+            const privateKey2 = data2.private_key;
+            const publicKey2 = data2.public_key;
+const reserved2 = data2.reserved
+
+            const displayData = `
+                Iran Acoount:
+                Local Address: ${localAddress1}
+                Private Key: ${privateKey1}
+reserved: ${reserved1}
+                Foreign Account:
+                Local Address: ${localAddress2}
+                Private Key: ${privateKey2}
+reserved: ${reserved2}
+            `;
+
+            document.getElementById('data').innerText = displayData;
         }
-        #data {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        button {
-            margin-top: 10px;
-        }
-        @media (max-width: 600px) {
-            body {
-                margin: 10px;
-            }
-            #data {
-                padding: 5px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>Wireguard Account - Warp Account maker -KayHGNG</h1>
-    <div id="data"></div>
-    <button id="downloadBtn">Download Data</button>
-
-    <script>
-async function fetchData() {
-    const response1 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
-    const data1 = await response1.json();
-    const response2 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
-    const data2 = await response2.json();
-    
-    const localAddress1 = data1.local_address;
-    const publicKey1 = data1.public_key;
-    const reserved1 = data1.reserved;
-    const privateKey1 = data1.private_key; // بدون تغییر
-
-    const localAddress2 = data2.local_address;
-    const publicKey2 = data2.public_key;
-    const reserved2 = data2.reserved;
-    const privateKey2 = data2.private_key; // بدون تغییر
-
-    // تبدیل '/' به '%' فقط در لینک‌ها
-
-    const displayData = 
-        First Account:
-        Local Address: ${localAddress1}
-        Private Key: ${privateKey1}
-        Reserved: ${reserved1}
-
-        Second Account:
-        Local Address: ${localAddress2}
-        Private Key: ${privateKey2}
-        Reserved: ${reserved2}
-
-        
-
-    document.getElementById('data').innerText = displayData;
-}
-
-
 
         document.getElementById('downloadBtn').addEventListener('click', function() {
-            const data = document.getElementById('data').innerText;
-            const blob = new Blob([data], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'api_data.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        });
+ <h1>Wireguard Account - Warp Account maker -KayHGNG</h1>
 
         fetchData();
     </script>
-    <h2>Your Public Key is: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo</h2>
+<h2> Your Public Key is : bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo= </h2>
 </body>
 </html>
