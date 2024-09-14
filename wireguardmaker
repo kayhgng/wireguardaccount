@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warp On Warp Account Maker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #data {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wireguard Account - Warp Account maker -KayHGNG</h1>
+    <div id="data"></div>
+    <button id="downloadBtn">Download Data</button>
+
+    <script>
+        async function fetchData() {
+            const response1 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
+            const data1 = await response1.json();
+            const response2 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
+            const data2 = await response2.json();
+            document.getElementById('data').innerText = JSON.stringify([data1, data2], null, 2);
+        }
+
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const data = document.getElementById('data').innerText;
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'api_data.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+
+        fetchData();
+    </script>
+</body>
+</html>
