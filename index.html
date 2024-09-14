@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warp On Warp Account Maker</title>
     <title>Wireguard Account - Warp Account maker -KayHGNG</title>
     <style>
         body {
             font-family: Arial, sans-serif;
- <h1>Wireguard Account - Warp Account maker -KayHGNG</h1>
+            margin: 20px;
+        }
+        #data {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wireguard Account - Warp Account maker -KayHGNG</h1>
+    <div id="data"></div>
+    <button id="downloadBtn">Download Data</button>
+
+    <script>
+        async function fetchData() {
+            const response1 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
             const data1 = await response1.json();
             const response2 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
             const data2 = await response2.json();
-            document.getElementById('data').innerText = JSON.stringify([data1, data2], null, 2);
-
+            
             const localAddress1 = data1.local_address;
             const privateKey1 = data1.private_key;
             const publicKey1 = data1.public_key;
@@ -25,11 +42,12 @@ const reserved1 = data1.reserved
 const reserved2 = data2.reserved
 
             const displayData = `
-                Iran Acoount:
+                First Acoount:
                 Local Address: ${localAddress1}
                 Private Key: ${privateKey1}
 reserved: ${reserved1}
-                Foreign Account:
+
+                Second Account:
                 Local Address: ${localAddress2}
                 Private Key: ${privateKey2}
 reserved: ${reserved2}
@@ -39,10 +57,21 @@ reserved: ${reserved2}
         }
 
         document.getElementById('downloadBtn').addEventListener('click', function() {
- <h1>Wireguard Account - Warp Account maker -KayHGNG</h1>
+            const data = document.getElementById('data').innerText;
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'api_data.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
 
         fetchData();
     </script>
 <h2> Your Public Key is : bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo= </h2>
+<h3> Well, you can go into v2rayng and click on the Type manualy Wirguard option in the + section and enter it, then copy any private key you want from this page and paste it in the Secrect Key section. Then copy the Public key written on this page and put it in the Public key field. Also, copy the reserved numbers in order and paste them in the reserved section. Then copy the local address that appears on this page and paste it in the local address field of v2rayng. And finally, through various scripts, you get a clean IP with a clean port and enter it in the address and port field.</h3>
+<h4> خیلی مخلصم ، علی کِی اِچ </h4>
 </body>
 </html>
