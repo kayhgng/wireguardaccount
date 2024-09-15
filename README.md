@@ -23,3 +23,25 @@ https://kayhgng.github.io/wireguardaccount/
 
 ## مرحله دوم
 خب شما میتوانید برید داخل  v2rayng ودر قسمت + روی گزینه Type manualy Wirguard بزنید و وارد اون بشید ، سپس پرایوت کی رو هرکدوم که خواستید از این صفحه کپی میکنید و در قسمت Secrect Key پیست میکنید. سپس Public key هم که نوشته شده در این صفحه رو کپی میکنید و در قسمت Public key میگذارید . همچنین اعداد reserved هم به ترتیب کپی میکنید و در قسمت reserved پیست میکنید . سپس لوکال آدرس که در این صفحه اومده رو کپی و در قسمت لوکال آدرس v2rayng پیست میکنید. و در نهایت از طریق اسکریپت های مختلف برای خودتون یک آیپی تمیز با پورت تمیز میگیرید و در قسمت آدرس و پورت وارد میکنید.
+
+نمونه اسکریپت برای دریافت آیپی تمیز وارپ : 
+
+bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/warp/main/endip/install.sh)
+
+
+
+# نمونه کانفیگ ساخته شده توسط این پروژه
+
+
+
+wireguard://kPogppDew6M8OXTezc5g8zUZXyKTOhb6SdbsH80k6Ek%3D@188.114.99.196:880?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A8b76%3A2ae4%3A9d1d%3Ab30%3Af74b%2F128&reserved=141%2C188%2C32&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1420#Github.com%2Fkayhgng+%F0%9F%98%81%E2%9C%8C%EF%B8%8F
+
+سرعت دانلود روی ایرانسل ۴۵ مگابایت بر ثانیه (خدایی سرعت خوبیه برای کانفیگ رایگان)
+
+سرعت آپلود روی ایرانسل ۱۲.۵ مگابایت بر   ثانیه (خدایی این سرعتا برای کانفیگ رایگان خوبه)
+
+
+## Screenshots
+
+![App Screenshot](https://s8.uupload.ir/files/screenshot_20240916_023247_speedtest_q13e.jpg)
+
