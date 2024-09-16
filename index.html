@@ -34,24 +34,26 @@
             const localAddress1 = data1.local_address;
             const privateKey1 = data1.private_key;
             const publicKey1 = data1.public_key;
-const reserved1 = data1.reserved
+            const reserved1 = data1.reserved;
 
             const localAddress2 = data2.local_address;
             const privateKey2 = data2.private_key;
             const publicKey2 = data2.public_key;
-const reserved2 = data2.reserved
+            const reserved2 = data2.reserved;
 
-            const displayData = `
-                First Acoount:
+            const displayData = 
+                First Account:
                 Local Address: ${localAddress1}
                 Private Key: ${privateKey1}
-reserved: ${reserved1}
+                Reserved: ${reserved1}
 
                 Second Account:
                 Local Address: ${localAddress2}
                 Private Key: ${privateKey2}
-reserved: ${reserved2}
-            `;
+                Reserved: ${reserved2}
+
+                Public Key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+            ;
 
             document.getElementById('data').innerText = displayData;
         }
@@ -70,8 +72,8 @@ reserved: ${reserved2}
 
         fetchData();
     </script>
-<h2> Your Public Key is : bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo= </h2>
-<h3> Well, you can go into v2rayng and click on the Type manualy Wirguard option in the + section and enter it, then copy any private key you want from this page and paste it in the Secrect Key section. Then copy the Public key written on this page and put it in the Public key field. Also, copy the reserved numbers in order and paste them in the reserved section. Then copy the local address that appears on this page and paste it in the local address field of v2rayng. And finally, through various scripts, you get a clean IP with a clean port and enter it in the address and port field.</h3>
-<h4> خیلی مخلصم ، علی کِی اِچ </h4>
+    <h2>Your Public Key is : bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=</h2>
+    <h3>Well, you can go into v2rayng and click on the Type manually Wireguard option in the + section and enter it, then copy any private key you want from this page and paste it in the Secret Key section. Then copy the Public key written on this page and put it in the Public key field. Also, copy the reserved numbers in order and paste them in the reserved section. Then copy the local address that appears on this page and paste it in the local address field of v2rayng. And finally, through various scripts, you get a clean IP with a clean port and enter it in the address and port field.</h3>
+    <h4>خیلی مخلصم ، علی کِی اِچ</h4>
 </body>
 </html>
