@@ -24,39 +24,68 @@
     <div id="data"></div>
     <button id="downloadBtn">Download Data</button>
 
+    <button id="copyLocalAddress1">Copy 1 Local Address</button>
+    <button id="copyPrivateKey1">Copy Private Key 1</button>
+    <button id="copyLocalAddress2">Copy 2 Local Address</button>
+    <button id="copyPrivateKey2">Copy Private Key 2</button>
+    <button id="copyPublicKey">Copy Public Key</button>
+
     <script>
+        let localAddress1, privateKey1, localAddress2, privateKey2;
+
         async function fetchData() {
             const response1 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
             const data1 = await response1.json();
             const response2 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
             const data2 = await response2.json();
             
-            const localAddress1 = data1.local_address;
-            const privateKey1 = data1.private_key;
-            const reserved1 = data1.reserved;
-
-
-            const localAddress2 = data2.local_address;
-            const privateKey2 = data2.private_key;
-            const reserved2 = data2.reserved;
+            localAddress1 = data1.local_address;
+            privateKey1 = data1.private_key;
+            localAddress2 = data2.local_address;
+            privateKey2 = data2.private_key;
 
             const displayData = 
                 First Account:
                 Local Address: ${localAddress1}
                 Private Key: ${privateKey1}
-                Reserved: ${reserved1}
-Public Key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
 
                 Second Account:
                 Local Address: ${localAddress2}
                 Private Key: ${privateKey2}
-                Reserved: ${reserved2}
-Public Key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
 
+                Public Key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
             ;
 
             document.getElementById('data').innerText = displayData;
         }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard: ' + text);
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        document.getElementById('copyLocalAddress1').addEventListener('click', function() {
+            copyToClipboard(localAddress1);
+        });
+
+        document.getElementById('copyPrivateKey1').addEventListener('click', function() {
+            copyToClipboard(privateKey1);
+        });
+
+        document.getElementById('copyLocalAddress2').addEventListener('click', function() {
+            copyToClipboard(localAddress2);
+        });
+
+        document.getElementById('copyPrivateKey2').addEventListener('click', function() {
+            copyToClipboard(privateKey2);
+        });
+
+        document.getElementById('copyPublicKey').addEventListener('click', function() {
+            copyToClipboard("bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=");
+        });
 
         document.getElementById('downloadBtn').addEventListener('click', function() {
             const data = document.getElementById('data').innerText;
@@ -72,8 +101,9 @@ Public Key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
 
         fetchData();
     </script>
-    <div><h2>Your Public Key is : bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=</h2><div>
-    <h3>Well, you can go into v2rayng and click on the Type manually Wireguard option in the + section and enter it, then copy any private key you want from this page and paste it in the Secret Key section. Then copy the Public key written on this page and put it in the Public key field. Also, copy the reserved numbers in order and paste them in the reserved section. Then copy the local address that appears on this page and paste it in the local address field of v2rayng. And finally, through various scripts, you get a clean IP with a clean port and enter it in the address and port field.</h3>
+    <h2>Your Public Key is : bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=</h2>
+
+        <h3>Well, you can go into v2rayng and click on the Type manually Wireguard option in the + section and enter it, then copy any private key you want from this page and paste it in the Secret Key section. Then copy the Public key written on this page and put it in the Public key field. Also, copy the reserved numbers in order and paste them in the reserved section. Then copy the local address that appears on this page and paste it in the local address field of v2rayng. And finally, through various scripts, you get a clean IP with a clean port and enter it in the address and port field.</h3>
     <h4>خیلی مخلصم ، علی کِی اِچ</h4>
 </body>
 </html>
