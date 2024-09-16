@@ -9,13 +9,26 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+        h1 {
+            font-size: 1.5em;
+            word-wrap: break-word;
+        }
         #data {
             margin-top: 20px;
             border: 1px solid #ccc;
             padding: 10px;
+            word-wrap: break-word;
         }
         button {
             margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            #data {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
