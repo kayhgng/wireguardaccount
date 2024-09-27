@@ -1,3 +1,6 @@
+## لینک دونیت ارز دیجیتال TON:
+
+UQBNCEBZZEdUkchBb3wGYzkZWyclSdmLPE_yQw1XWCVjGeS5
 
 ## توضیحات
 خب خب سلام علی هستم از تیم کِی اِچ جی ان جی (جالبیش اینجاس فقط خودمم !)
