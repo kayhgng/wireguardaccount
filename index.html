@@ -56,36 +56,42 @@
 
     <script>
         async function fetchData() {
-            const response1 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
-            const data1 = await response1.json();
-            const response2 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
-            const data2 = await response2.json();
-            
-            const localAddress1 = data1.local_address;
-            const privateKey1 = data1.private_key;
-            const publicKey1 = data1.public_key;
-            const reserved1 = data1.reserved;
+            try {
+                const response1 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
+                if (!response1.ok) throw new Error('Network response was not ok');
+                const data1 = await response1.json();
+                const response2 = await fetch('https://api.zeroteam.top/warp?format=sing-box');
+                if (!response2.ok) throw new Error('Network response was not ok');
+                const data2 = await response2.json();
+                
+                const localAddress1 = data1.local_address;
+                const privateKey1 = data1.private_key;
+                const publicKey1 = data1.public_key;
+                const reserved1 = data1.reserved;
 
-            const localAddress2 = data2.local_address;
-            const privateKey2 = data2.private_key;
-            const publicKey2 = data2.public_key;
-            const reserved2 = data2.reserved;
+                const localAddress2 = data2.local_address;
+                const privateKey2 = data2.private_key;
+                const publicKey2 = data2.public_key;
+                const reserved2 = data2.reserved;
 
-            const displayData = `
-                First Account:
-                Local Address: ${localAddress1}
-                Private Key: ${privateKey1}
-                Reserved: ${reserved1}
+                const displayData = `
+                    First Account:
+                    Local Address: ${localAddress1}
+                    Private Key: ${privateKey1}
+                    Reserved: ${reserved1}
 
-                Second Account:
-                Local Address: ${localAddress2}
-                Private Key: ${privateKey2}
-                Reserved: ${reserved2}
+                    Second Account:
+                    Local Address: ${localAddress2}
+                    Private Key: ${privateKey2}
+                    Reserved: ${reserved2}
 
-                Public Key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-            `;
+                    Public Key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+                `;
 
-            document.getElementById('data').innerText = displayData;
+                document.getElementById('data').innerText = displayData;
+            } catch (error) {
+                alert('سامانه فعلا در دسترس نمیباشد. KAYH GNG');
+            }
         }
 
         document.getElementById('downloadBtn').addEventListener('click', function() {
